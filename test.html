@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Offers</h1>
+    <table id="offer-table" class="table">
+        <thead>
+            <tr>
+                <th>Offer</th>
+                <th>Monthly Clicks</th>
+                <th>Monthly Payouts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dynamic content will be inserted here -->
+        </tbody>
+    </table>
+
+    <h1>Past Events</h1>
+    <div class="swiper-wrapper" id="cpastEvents">
+        <!-- Past Events will be inserted here -->
+    </div>
+
+    <h1>Upcoming Events</h1>
+    <div class="swiper-wrapper" id="cupcomingEvents">
+        <!-- Upcoming Events will be inserted here -->
+    </div>
+
+    <h1>Contact Form</h1>
+    <form method="post" id="contactForm" class="form-win">
+        <div class="form__wrapper">
+            <div class="form-block">
+                <h2 class="form-block__title">Send Request</h2>
+                <div class="message" id="formMessage"></div>
+                <div class="form-block__wrap">
+                    <input type="text" name="name" id="cname" class="form-block__input" placeholder="Name:" />
+                    <input type="text" name="company" id="company" class="form-block__input" placeholder="Company:" />
+                    <div class="form-block__wrapper">
+                        <div class="form-block__text">Communication in:</div>
+                        <input class="custom-radio" name="communication_type" type="radio" id="radio-skype" value="Skype" />
+                        <label for="radio-skype">Skype</label>
+                        <input class="custom-radio" name="communication_type" type="radio" id="radio-telegram" value="Telegram" />
+                        <label for="radio-telegram">Telegram</label>
+                        <input class="custom-radio" name="communication_type" type="radio" id="radio-email" value="Email" />
+                        <label for="radio-email">Email</label>
+                    </div>
+                    <input type="text" name="communication_id" id="communication_id" class="form-block__input" placeholder="Your Skype ID, Telegram, Email" />
+                    <input type="text" name="message" id="message-input" class="form-block__input" placeholder="Your message:" />
+                </div>
+                <button type="submit" class="form-block__btn">
+                    Submit Request
+                </button>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

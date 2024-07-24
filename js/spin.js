@@ -1,159 +1,186 @@
-function create_spinner() {
-    var slices = spinWheelData.length;
-    var sliceDeg = 360 / slices;
-    var deg = rand(0, 360);
-    var ctx = canvas.getContext('2d');
-    var width = canvas.width; // size
-    var center = width / 2;      // center
+            // const title = event.name;
+            // const location = event.location;
+            // const image = event.column_values.find(col => col.id === 'image').text;
+            // const startDate = new Date(event.column_values.find(col => col.id === 'start_date').text);
+            // const endDate = new Date(event.column_values.find(col => col.id === 'end_date').text);
 
-    ctx.clearRect(0, 0, width, width);
-    for (var i = 0; i < slices; i++) {
-        ctx.beginPath();
-        ctx.fillStyle = spinWheelData[i]['BackgroundColor'];
-        ctx.moveTo(center, center);
-        ctx.arc(center, center, width / 2, deg2rad(deg), deg2rad(deg + sliceDeg));
-        ctx.lineTo(center, center);
-        ctx.fill();
-        var drawText_deg = deg + sliceDeg / 2;
-        ctx.save();
-        ctx.translate(center, center);
-        ctx.rotate(deg2rad(drawText_deg));
-        ctx.textAlign = "center"; // Adjusted to center text horizontally
-        ctx.textBaseline = "middle"; // Adjusted to center text vertically
-        ctx.fillStyle = spinWheelData[i]['TextColor'];
-        ctx.font = 'bold 15px sans-serif';
-        ctx.fillText(spinWheelData[i]['spin_prizesTitle'], 100, 5);
-        ctx.restore();
-        deg += sliceDeg;
-    }
-}
-create_spinner();
+            // const eventHtml = `
+            // <div class="swiper-slide events-swiper__slide">
+            //     <div class="events-swiper__img">
+            //         <img src="${image}" alt="${title}">
+            //     </div>
+            //     <div class="events-swiper__city">
+            //         <h2>${title}</h2>
+            //     </div>
+            //     <div class="events-swiper__caption">
+            //         <p>${location}</p>
+            //     </div>
+            //     <div class='events-swiper__date'>
+            //         <p>${startDate.toDateString()} - ${endDate.toDateString()}</p>
+            //     </div>
+            // </div>`;
 
-var deg = rand(0, 360);
-var speed = 0;
-var ctx = canvas.getContext('2d');
-var width = canvas.width; // size
-var center = width / 2;      // center
-var isStopped = false;
-var lock = false;
-var slowDownRand = 0;
+            const MONDAY_API_URL = 'https://api.monday.com/v2';
+            const API_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjM2NzAzMjk1NywiYWFpIjoxMSwidWlkIjo2MTY3MjM3MSwiaWFkIjoiMjAyNC0wNi0wM1QxMToxMDoxNi4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjM3NjY4MjAsInJnbiI6ImV1YzEifQ.lwt_o5BXX5aEvgzu7zcbTXBfCRYQNT8XoUvRSB5rs8o';
+            
+            // Submit Contact Form to Monday.com
+            async function submitContactForm() {
+                const name = document.getElementById('cname').value;
+                const company = document.getElementById('company').value;
+                const communicationType = document.querySelector('input[name="communication_type"]:checked').value;
+                const communicationId = document.getElementById('communication_id').value;
+                const message = document.getElementById('message').value;
+            
+                const query = `
+                mutation {
+                    create_item (board_id: 1574325540, item_name: "${name}", column_values: "{\\"company\\": \\"${company}\\", \\"communication_type\\": \\"${communicationType}\\", \\"communication_id\\": \\"${communicationId}\\", \\"message\\": \\"${message}\\"}") {
+                        id
+                    }
+                }`;
+            
+                try {
+                    const response = await axios.post(MONDAY_API_URL, { query: query }, {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': API_TOKEN
+                        }
+                    });
+            
+                    if (response.data) {
+                        alert('Form submitted successfully!');
+                    } else {
+                        alert('Failed to submit form.');
+                    }
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    alert('An error occurred while submitting the form.');
+                }
+            }
+            
+            // Fetch and Display Events from Monday.com
+            async function fetchEvents() {
+                const query = `
+                query {
+                    boards(ids: 1574326188) {
+                        items {
+                            name
+                            column_values {
+                                id
+                                text
+                            }
+                        }
+                    }
+                }`;
+            
+                try {
+                    const response = await axios.post(MONDAY_API_URL, { query: query }, {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': API_TOKEN
+                        }
+                    });
+            
+                    console.log('Events response:', response.data);
+            
+                    const events = response.data?.data?.boards?.[0]?.items;
+                    if (!events) {
+                        throw new Error('No events found');
+                    }
+            
+                    const now = new Date();
+            
+                    events.forEach(event => {
+                        const title = event.name;
+                        const location = event.location;
+                        const image = event.column_values.find(col => col.id === 'image').text;
+                        const startDate = new Date(event.column_values.find(col => col.id === 'start_date').text);
+                        const endDate = new Date(event.column_values.find(col => col.id === 'end_date').text);
 
-function spin() {
-    var slices = spinWheelData.length;
-    var sliceDeg = 360 / slices;
-    deg += speed;
-    deg %= 360;
-    // Instant fast speed
-    if (!isStopped && speed < 30) {
-        speed = speed + 2;
-    }
-    // Stopped!
-    if (isStopped) {
-        if (!lock) {
-            lock = true;
-            slowDownRand = rand(0.986, 0.990);
-        }
-        speed = speed > 0.2 ? speed *= slowDownRand : 0;
-    }
-    // Stopped after 6 seconds
-    if (lock && !speed) {
-        var ai = Math.floor(((360 - deg - 90) % 360) / sliceDeg); // deg 2 Array Index
-        ai = (slices + ai) % slices; // Fix negative index
-        var winProbability = spinWheelData[ai]['Probability'];
-        var randomNumber = 21;
-
-        if (randomNumber > winProbability) {
-            showWinPopup(spinWheelData[ai]['spin_prizesTitle']);
-        } else {
-            showLosePopup(spinWheelData[ai]['spin_prizesTitle']);
-        }
-    }
-    ctx.clearRect(0, 0, width, width);
-    for (var i = 0; i < slices; i++) {
-        ctx.beginPath();
-        ctx.fillStyle = spinWheelData[i]['BackgroundColor'];
-        ctx.moveTo(center, center);
-        ctx.arc(center, center, width / 2, deg2rad(deg), deg2rad(deg + sliceDeg));
-        ctx.lineTo(center, center);
-        ctx.fill();
-        var drawText_deg = deg + sliceDeg / 2;
-        ctx.save();
-        ctx.translate(center, center);
-        ctx.rotate(deg2rad(drawText_deg));
-        ctx.textAlign = "center"; // Adjusted to center text horizontally
-        ctx.textBaseline = "middle"; // Adjusted to center text vertically
-        ctx.fillStyle = spinWheelData[i]['TextColor'];
-        ctx.font = 'bold 15px sans-serif';
-        ctx.fillText(spinWheelData[i]['spin_prizesTitle'], 100, 5);
-        ctx.restore();
-        deg += sliceDeg;
-    }
-    window.requestAnimationFrame(spin);
-}
-
-setTimeout(function () {
-    isStopped = true;
-}, 6000);
-
-function deg2rad(deg) {
-    return deg * Math.PI / 180;
-}
-
-function showWinPopup(prizeTitle) {
-    document.getElementById('win-card').style.display = 'block';
-    document.getElementById('win-prize').textContent = prizeTitle;
-    document.getElementById('prize-input').value = prizeTitle;
-    document.getElementById('popup-container').style.display = 'flex';
-}
-
-function showLosePopup(prizeTitle) {
-    document.getElementById('lose-card').style.display = 'block';
-    document.getElementById('lose-prize').textContent = prizeTitle;
-    document.getElementById('popup-container').style.display = 'flex';
-}
-
-function closePopup(isWin = false) {
-    document.getElementById('popup-container').style.display = 'none';
-    document.getElementById('win-card').style.display = 'none';
-    document.getElementById('lose-card').style.display = 'none';
-
-    // Reset the spin wheel if the user won
-    if (isWin) {
-        isStopped = false;
-        lock = false;
-        speed = 0;
-        deg = rand(0, 360);
-        create_spinner();
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('win-form').addEventListener('submit', function (event) {
-        event.preventDefault();
-        const name = document.getElementById('wname').value;
-        const email = document.getElementById('wemail').value;
-        const prizeTitle = document.getElementById('prize-input').value;
-
-        // Send data to the server using AJAX or fetch
-        const formData = new FormData();
-        formData.append('wname', name);
-        formData.append('prizeTitle', prizeTitle);
-
-        fetch('', {
-            method: 'POST',
-            body: formData
-        })
-            .then(response => response.text())
-            .then(data => {
-                closePopup();
-            })
-            .catch(error => {
-                console.error('Error:', error);
+                        const eventHtml = `
+                        <div class="swiper-slide events-swiper__slide">
+                            <div class="events-swiper__img">
+                                <img src="${image}" alt="${title}">
+                            </div>
+                            <div class="events-swiper__city">
+                                <h2>${title}</h2>
+                            </div>
+                            <div class="events-swiper__caption">
+                                <p>${location}</p>
+                            </div>
+                            <div class='events-swiper__date'>
+                                <p>${startDate.toDateString()} - ${endDate.toDateString()}</p>
+                            </div>
+                        </div>`;
+            
+                        if (endDate >= now) {
+                            document.getElementById('cupcomingEvents').innerHTML += eventHtml;
+                        } else {
+                            document.getElementById('cpastEvents').innerHTML += eventHtml;
+                        }
+                    });
+                } catch (error) {
+                    console.error('Error fetching events:', error);
+                    alert('An error occurred while fetching events.');
+                }
+            }
+            
+            // Fetch and Display Offers from Monday.com
+            async function fetchOffers() {
+                const query = `
+                query {
+                    boards(ids: 1574354393) {
+                        items {
+                            name
+                            column_values {
+                                id
+                                text
+                            }
+                        }
+                    }
+                }`;
+            
+                try {
+                    const response = await axios.post(MONDAY_API_URL, { query: query }, {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': API_TOKEN
+                        }
+                    });
+            
+                    console.log('Offers response:', response.data);
+            
+                    const offers = response.data?.data?.boards?.[0]?.items;
+                    if (!offers) {
+                        throw new Error('No offers found');
+                    }
+            
+                    const tbody = document.querySelector('#offer-table tbody');
+            
+                    tbody.innerHTML = ''; // Clear existing content
+            
+                    offers.forEach(offer => {
+                        const name = offer.name;
+                        const monthlyClicks = offer.column_values.find(col => col.id === 'monthly_clicks')?.text || '';
+                        const monthlyPayouts = offer.column_values.find(col => col.id === 'monthly_payouts')?.text || '';
+            
+                        const rowHtml = `
+                        <tr>
+                            <td>${name}</td>
+                            <td>${monthlyClicks}</td>
+                            <td>${monthlyPayouts}</td>
+                        </tr>`;
+            
+                        tbody.innerHTML += rowHtml;
+                    });
+                } catch (error) {
+                    console.error('Error fetching offers:', error);
+                    alert('An error occurred while fetching offers.');
+                }
+            }
+            
+            // Initialize on DOM Content Loaded
+            document.addEventListener("DOMContentLoaded", function() {
+                fetchEvents();
+                fetchOffers();
             });
-    });
-
-    // ... (existing code) ...
-});
-function rand(min, max) {
-    return Math.random() * (max - min) + min;
-}
+            
