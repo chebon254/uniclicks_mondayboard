@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Uniclicks</title>
+  <meta name="description" lang="en" content="Uniclicks" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- == META OG Social Media Ads == -->
+  <meta property="og:title" content="Uniclicks" />
+  <meta property="og:url" content="https://uniclicks.com" />
+  <meta property="og:image" content="https://uniclicks.com/admin/css/img/social media/Facebook.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:desc revealription" content="We Grow Together With Each Click" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@uniclicks">
+  <meta name="twitter:title" content="Uniclicks">
+  <meta name="twitter:desc revealription" content="We Grow Together With Each Click">
+  <meta name="twitter:image" content="https://uniclicks.com/admin/css/img/social media/Twitter.png">
+  <meta name="twitter:player" content="https://uniclicks.com">
+  <meta name="twitter:player:width" content="280">
+  <meta name="twitter:player:height" content="150">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="admin/assets/css/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="admin/assets/css/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="admin/assets/css/favicon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="admin/assets/css/favicon/favicon-16x16.png">
+  <link rel="manifest" href="admin/assets/css/favicon/site.webmanifest">
+  <link rel="mask-icon" href="admin/assets/css/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="admin/assets/css/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="admin/assets/css/favicon/mstile-144x144.png">
+  <meta name="msapplication-config" content="admin/assets/css/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/GoogleSans-Medium.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/GoogleSans-Bold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script defer="defer" src="js/script.js"></script>
+  <!-- == Icons == -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        crossorigin="anonymous" />
+  <!-- Include jQuery from a CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+</head>
+<body>
+  <div class="wrapper" data-overlay="false">
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="logo">
+            <a href="index.html" aria-label="Go to main page"><svg width="158" height="32" viewBox="0 0 158 32"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_94_2297)">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M79.7475 0.184082H84.3851V31.3674H79.7475V0.184082ZM122.821 0.184082H127.459V16.4877L134.406 9.45344H140.572L131.074 18.9452L142.088 31.3674H136.002L127.838 22.0787L127.459 22.4579V31.3674H122.821V0.184082ZM28.1189 11.0508C29.5804 9.65168 31.4213 8.94968 33.6134 8.94968C36.4378 8.94968 38.6075 9.96554 40.0281 12.0405C40.9218 13.3434 41.3259 15.3332 41.3259 17.9168V31.3674H36.6883V18.0175C36.6883 16.3522 36.3753 15.2069 35.834 14.4946C35.1752 13.6363 34.1954 13.1813 32.8069 13.1813C31.393 13.1813 30.3137 13.6653 29.5123 14.6145L29.5098 14.6175C28.6177 15.6577 28.1189 17.3916 28.1189 19.9319V31.3674H23.4814V9.45344H28.1189V11.0508ZM59.6589 12.2694C61.8782 10.0524 64.6813 8.94968 68.0287 8.94968C70.5483 8.94968 72.818 9.65116 74.8211 11.0562L75.0358 11.2066V17.2508L74.1361 16.1133C72.5876 14.1554 70.5509 13.1813 67.9783 13.1813C66.0582 13.1813 64.4377 13.8367 63.0882 15.1538L63.084 15.158C61.7591 16.4203 61.0725 18.1743 61.0725 20.486C61.0725 22.7977 61.7591 24.5518 63.084 25.814C64.4341 27.1007 66.0398 27.7403 67.9279 27.7403C70.4575 27.7403 72.5698 26.7228 74.2952 24.6476L75.187 23.5748V29.5582L74.9797 29.7091C72.9109 31.216 70.5887 31.9719 68.0287 31.9719C64.6535 31.9719 61.8347 30.9068 59.6127 28.7571L59.6101 28.7543L59.6069 28.7514C57.4217 26.5674 56.3341 23.8163 56.3341 20.5364C56.3341 17.2227 57.439 14.4538 59.6589 12.2694ZM102.733 12.2694C104.952 10.0524 107.755 8.94968 111.102 8.94968C113.622 8.94968 115.891 9.65116 117.895 11.0562L118.109 11.2066V17.2508L117.21 16.1133C115.661 14.1554 113.625 13.1813 111.052 13.1813C109.132 13.1813 107.511 13.8367 106.162 15.1538L106.158 15.158C104.833 16.4202 104.146 18.1743 104.146 20.486C104.146 22.7977 104.833 24.5518 106.158 25.814C107.508 27.1007 109.113 27.7403 111.002 27.7403C113.531 27.7403 115.643 26.7228 117.369 24.6476L118.261 23.5748V29.5582L118.053 29.7091C115.985 31.216 113.662 31.9719 111.102 31.9719C107.727 31.9719 104.908 30.9068 102.686 28.7571L102.684 28.7543L102.681 28.7514C100.495 26.5674 99.4077 23.8163 99.4077 20.5364C99.4077 17.2227 100.513 14.4538 102.733 12.2694ZM145.663 10.6428C146.914 9.5027 148.522 8.94968 150.439 8.94968C151.848 8.94968 153.091 9.2852 154.143 9.97714C155.194 10.6681 156.023 11.6928 156.642 13.0187L156.845 13.4542L152.953 15.4981L152.744 14.9824C152.485 14.3417 152.149 13.8988 151.756 13.6145C151.367 13.3329 150.886 13.1813 150.287 13.1813C149.688 13.1813 149.199 13.3488 148.795 13.67C148.466 13.9544 148.271 14.3847 148.271 15.0453C148.271 15.63 148.444 16.008 148.733 16.2598C149.159 16.5592 150.013 16.9897 151.34 17.5535C154.001 18.6644 155.853 19.778 156.779 20.9243L156.78 20.9254L156.387 21.2417L156.777 20.9234L156.779 20.9243C157.601 21.9339 158 23.1761 158 24.6169C158 26.8532 157.266 28.6765 155.767 30.0286L155.766 30.0291C154.316 31.3339 152.475 31.9719 150.287 31.9719C149.847 31.9719 149.381 31.9177 148.888 31.8133C148.894 31.8141 148.9 31.8149 148.906 31.8158L148.977 31.317L148.871 31.8096C148.877 31.8108 148.883 31.812 148.888 31.8133C148.377 31.7385 147.696 31.5613 146.858 31.2931L146.845 31.2893L146.834 31.285C145.936 30.9484 145.1 30.3404 144.321 29.4913C143.526 28.6251 142.922 27.5527 142.5 26.2875L142.352 25.8443L146.395 24.1501L146.577 24.6446C146.976 25.7293 147.495 26.4986 148.109 26.9961C148.717 27.4876 149.451 27.7403 150.338 27.7403C151.34 27.7403 152.023 27.4414 152.474 26.9102L152.479 26.9048L152.484 26.8995C153.009 26.3168 153.262 25.6632 153.262 24.9192C153.262 24.5079 153.188 24.1859 153.063 23.9354L153.05 23.9095L153.04 23.8823C152.945 23.6217 152.763 23.3798 152.461 23.1604L152.452 23.1536L152.443 23.1463C152.13 22.8967 151.824 22.6986 151.524 22.5487L151.514 22.5437L151.505 22.5385C151.222 22.3818 150.786 22.1709 150.185 21.9042L150.186 21.9047L150.388 21.4432L150.183 21.9035L150.185 21.9042C148.83 21.3116 147.712 20.7519 146.839 20.2245C145.972 19.7016 145.313 19.1911 144.905 18.6867L144.902 18.6829C144.179 17.7704 143.835 16.6288 143.835 15.2972C143.835 13.3735 144.428 11.8025 145.658 10.648L145.66 10.6454L145.663 10.6428ZM94.8708 11.6199V31.3674H90.2332V14.1947L94.8708 11.6199ZM0.00012207 9.45344H4.63769V22.1485C4.63769 24.2392 4.9754 25.5883 5.54012 26.3233C6.26677 27.2519 7.33277 27.7403 8.82159 27.7403C10.3104 27.7403 11.3764 27.2519 12.1031 26.3233C12.6678 25.5883 13.0055 24.2392 13.0055 22.1485V9.45344H17.643V22.5515C17.643 25.4372 16.9912 27.6835 15.5932 29.191L15.5903 29.1941C13.8391 31.0513 11.5675 31.9719 8.82159 31.9719C6.07559 31.9719 3.80407 31.0513 2.05285 29.1941L2.05001 29.191C0.651951 27.6835 0.00012207 25.4372 0.00012207 22.5515V9.45344ZM47.1595 9.45344H51.7971V31.3674H47.1595V9.45344Z"
+                    fill="#05160F" />
+                  <path
+                    d="M94.7684 0.133301L94.771 3.33306L99.3053 0.637073L101.573 4.91911L90.2368 11.1817L90.2316 0.134754L94.7684 0.133301Z"
+                    fill="url(#paint0_linear_94_2297)" />
+                </g>
+                <defs>
+                  <linearGradient id="paint0_linear_94_2297" x1="96.9867" y1="-4.40062" x2="96.9867" y2="11.1817"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#2FAD81" />
+                    <stop offset="1" stop-color="#209265" />
+                  </linearGradient>
+                  <clipPath id="clip0_94_2297">
+                    <rect width="158" height="32" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg></a>
+          </div>
+          <nav class="menu" data-menu>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="index.html#about" class="menu__link" data-menu-item>About us</a>
+              </li>
+              <li class="menu__item">
+                <a href="index.html#services" class="menu__link" data-menu-item>Services</a>
+              </li>
+              <li class="menu__item">
+                <a href="index.html#events" class="menu__link" data-menu-item>Events</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link triggerModalForm" data-menu-item>Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+          <button type="button" class="btn-main header__btn triggerModalForm">
+            Contact Us
+          </button>
+          <button class="burger" data-burger aria-label="Открыть меню" aria-expanded="false">
+            <span></span></button><!-- <button class="burger" data-burger aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+      </button> -->
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero__wrapper">
+            <div class="hero-info">
+              <h1 class="hero-info__title">
+                We <span>Grow</span> Together With Each Click
+              </h1>
+              <a href="https://platform.clictack.com/affiliate/signup">
+                <button type="button" class="btn-main about-info__btn">
+                  SIGN UP NOW
+                </button>
+              </a>
+            </div>
+            <div class="hero-img">
+              <img src="./img/hero-img.png" width="473" height="315" alt="Uniclicks" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="about">
+        <div class="container">
+          <div class="about__wrapper">
+            <div class="about-img">
+              <img src="img/about-img.png" alt="">
+            </div>
+            <div class="about-info">
+              <h2 class="title about-info__title">About Us</h2>
+              <div class="about-info__text">
+                <p>
+                  Not just an affiliate network company, but your team
+                  of dedicated experts. We offer a great importance
+                  to communication, steadfast support and top notch
+                  technologies to ensure thriving collaboration.
+                </p>
+                <p>
+                  Join forces with our talented, ambitious, and driven team.
+                  You’ll discover a collaborative approach infused with
+                  professionalism. Trust is the cornerstone of successful
+                  partnerships. That’s why we work daily to enhance the
+                  quality of our partnerships, ensuring mutual success.
+                </p>
+              </div>
+              <button type="button" class="btn-main about-info__btn triggerModalForm">
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="top-offers" class="top-offers">
+        <div class="container">
+          <h2 class="title services__title">Top Offers</h2>
+          <div class="top-offers-wrapper">
+            <div class="top-offers-table">
+              <table id="offer-table" class="table">
+                <thead>
+                  <tr>
+                    <th>Offer</th>
+                    <th>Monthly Clicks</th>
+                    <th>Monthly Payouts</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>King</td>
+                    <td>234</td>
+                    <td>$762</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="services" class="services">
+        <div class="container">
+          <div class="services__wrapper">
+            <h2 class="title services__title">Our Services</h2>
+            <div class="services-block">
+              <div class="services-block__item">
+                <div class="services-block__header">
+                  <div class="services-block__ico">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M21.9075 8.87987C21.4699 8.8163 21.0522 8.65482 20.6856 8.40746C20.3191 8.1601 20.013 7.83323 19.7903 7.45119C19.5675 7.06915 19.4339 6.64178 19.3992 6.20091C19.3645 5.76004 19.4297 5.31703 19.59 4.90487C19.6919 4.63541 19.7069 4.34083 19.6329 4.06241C19.559 3.784 19.3997 3.53571 19.1775 3.35237C18.1965 2.52862 17.0799 1.8815 15.8775 1.43987C15.6037 1.33816 15.3048 1.32545 15.0233 1.40355C14.7419 1.48166 14.4923 1.6466 14.31 1.87487C14.0357 2.22561 13.6852 2.50928 13.2849 2.70438C12.8847 2.89947 12.4453 3.00086 12 3.00086C11.5548 3.00086 11.1153 2.89947 10.7151 2.70438C10.3149 2.50928 9.96431 2.22561 9.69002 1.87487C9.50778 1.6466 9.25816 1.48166 8.9767 1.40355C8.69525 1.32545 8.39633 1.33816 8.12252 1.43987C7.01227 1.8476 5.97421 2.42993 5.04752 3.16487C4.81392 3.34979 4.64567 3.60464 4.56739 3.89211C4.48912 4.17957 4.50493 4.48454 4.61252 4.76237C4.78558 5.18544 4.85709 5.64318 4.8213 6.09887C4.7855 6.55456 4.64341 6.99552 4.40642 7.38638C4.16942 7.77724 3.84412 8.10712 3.45661 8.34955C3.0691 8.59198 2.63017 8.74022 2.17502 8.78237C1.87952 8.81396 1.60198 8.9396 1.38325 9.14077C1.16452 9.34195 1.01616 9.60804 0.960016 9.89987C0.820364 10.5911 0.750016 11.2946 0.750016 11.9999C0.74899 12.5903 0.796651 13.1798 0.892516 13.7624C0.940227 14.0635 1.08583 14.3406 1.3068 14.5507C1.52778 14.7609 1.81182 14.8924 2.11502 14.9249C2.58016 14.9685 3.02808 15.123 3.42129 15.3752C3.8145 15.6275 4.14156 15.9704 4.37509 16.375C4.60862 16.7796 4.74182 17.2343 4.76356 17.701C4.78529 18.1677 4.69493 18.6328 4.50002 19.0574C4.37246 19.3335 4.34082 19.6444 4.41012 19.9406C4.47942 20.2369 4.64568 20.5014 4.88252 20.6924C5.8576 21.5012 6.96345 22.1378 8.15252 22.5749C8.30457 22.6275 8.46411 22.6554 8.62502 22.6574C8.84564 22.6569 9.06294 22.6035 9.25869 22.5017C9.45443 22.3999 9.62292 22.2527 9.75002 22.0724C10.0173 21.6829 10.3757 21.3646 10.7939 21.145C11.2121 20.9254 11.6776 20.8112 12.15 20.8124C12.6077 20.8129 13.0589 20.9204 13.4678 21.1261C13.8766 21.3318 14.2318 21.6302 14.505 21.9974C14.6867 22.2417 14.9442 22.419 15.2372 22.5017C15.5302 22.5845 15.8423 22.568 16.125 22.4549C17.2123 22.0173 18.2245 21.4125 19.125 20.6624C19.3512 20.4753 19.5123 20.2214 19.5851 19.937C19.6578 19.6527 19.6386 19.3526 19.53 19.0799C19.3536 18.6623 19.2767 18.2094 19.3053 17.7569C19.334 17.3045 19.4674 16.8649 19.6951 16.4729C19.9227 16.0808 20.2384 15.7471 20.6171 15.4979C20.9959 15.2488 21.4274 15.0911 21.8775 15.0374C22.1694 14.997 22.4409 14.8648 22.6526 14.6598C22.8643 14.4548 23.0052 14.1878 23.055 13.8974C23.1755 13.2718 23.2407 12.6369 23.25 11.9999C23.2502 11.328 23.1874 10.6576 23.0625 9.99737C23.0119 9.71334 22.873 9.4525 22.6657 9.25189C22.4583 9.05128 22.1931 8.92111 21.9075 8.87987ZM15.75 11.9999C15.75 12.7415 15.5301 13.4666 15.118 14.0833C14.706 14.6999 14.1203 15.1806 13.4351 15.4644C12.7499 15.7482 11.9959 15.8225 11.2684 15.6778C10.541 15.5331 9.87281 15.176 9.34837 14.6515C8.82392 14.1271 8.46677 13.4589 8.32207 12.7315C8.17738 12.004 8.25164 11.25 8.53547 10.5648C8.8193 9.87958 9.29994 9.29391 9.91663 8.88186C10.5333 8.4698 11.2583 8.24987 12 8.24987C12.9946 8.24987 13.9484 8.64496 14.6517 9.34822C15.3549 10.0515 15.75 11.0053 15.75 11.9999Z"
+                        fill="white" fill-opacity="0.64" />
+                    </svg>
+                  </div>
+                  <h3 class="services-block__caption">In-house CRM</h3>
+                </div>
+                <div class="services-block__text">
+                  Benefit from safe and fast service backed by cutting-edge
+                  technology. Our tech team is available around the clock.
+                </div>
+              </div>
+              <div class="services-block__item">
+                <div class="services-block__header">
+                  <div class="services-block__ico">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_98_4151)">
+                        <path
+                          d="M18.8988 4.9658L20.4051 3.45956C20.6797 3.18497 20.6797 2.7398 20.4051 2.46521C20.1305 2.19061 19.6853 2.19066 19.4107 2.46521L17.9044 3.97144C17.6298 4.24599 17.6298 4.69121 17.9044 4.9658C18.1789 5.24035 18.6241 5.24044 18.8988 4.9658Z"
+                          fill="white" fill-opacity="0.64" />
+                        <path
+                          d="M22.1673 8.28418H20.661C20.2727 8.28418 19.9579 8.59899 19.9579 8.9873C19.9579 9.37562 20.2727 9.69043 20.661 9.69043H22.1673C22.5556 9.69043 22.8704 9.37562 22.8704 8.9873C22.8704 8.59899 22.5556 8.28418 22.1673 8.28418Z"
+                          fill="white" fill-opacity="0.64" />
+                        <path
+                          d="M13.8828 2.91248C14.2711 2.91248 14.5859 2.59767 14.5859 2.20936V0.703125C14.5859 0.314812 14.2711 0 13.8828 0C13.4945 0 13.1797 0.314812 13.1797 0.703125V2.20936C13.1797 2.59767 13.4945 2.91248 13.8828 2.91248Z"
+                          fill="white" fill-opacity="0.64" />
+                        <path
+                          d="M1.33562 17.5278C1.06126 17.8021 1.06102 18.2476 1.33562 18.5221L4.34813 21.5346C4.62263 21.8092 5.06785 21.8093 5.34249 21.5346L6.52074 20.3564L2.51392 16.3496L1.33562 17.5278Z"
+                          fill="white" fill-opacity="0.64" />
+                        <path
+                          d="M13.5091 18.0957L8.5719 20.4191L11.947 23.7943C12.2215 24.0688 12.6668 24.0689 12.9414 23.7943L15.5773 21.1583C15.8519 20.8837 15.8519 20.4386 15.5773 20.164L13.5091 18.0957Z"
+                          fill="white" fill-opacity="0.64" />
+                        <path
+                          d="M10.6143 2.46521C10.4524 2.30331 10.2218 2.23041 9.99624 2.26974C9.77068 2.30912 9.57844 2.45584 9.48094 2.66302L3.50818 15.3551L7.51501 19.362L20.2071 13.3892C20.4143 13.2917 20.561 13.0994 20.6004 12.8739C20.6398 12.6483 20.5668 12.4177 20.4049 12.2558L10.6143 2.46521Z"
+                          fill="white" fill-opacity="0.64" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_98_4151">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </div>
+                  <h3 class="services-block__caption">Direct Advertisers</h3>
+                </div>
+                <div class="services-block__text">
+                  Want the highest revenue on your traffic? Let our team connect you with the highest converting
+                  advertisers in the industry!
+                </div>
+              </div>
+              <div class="services-block__item">
+                <div class="services-block__header">
+                  <div class="services-block__ico">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.95701 2.66996C9.95567 2.30095 10.2535 2.00133 10.6235 2C12.4524 2 13.8416 3.07968 14.6841 4.42893C15.1867 5.23235 15.4945 6.06513 15.6865 6.93394C15.8431 6.48018 15.8913 6.31536 16.0225 5.77953C16.1269 5.3578 16.6013 5.14694 16.9854 5.35046C18.3472 6.07647 19.2359 7.50114 19.8254 9.0012C20.415 10.5013 20.7 12.0968 20.7 13.3252C20.7 18.1084 16.7987 22 12.002 22C7.20533 22 3.4084 18.103 3.30267 13.3393C3.2498 10.9744 3.98724 8.63619 6.49801 5.51795C6.83929 5.08822 7.52654 5.22968 7.66907 5.75884C7.84507 6.3961 7.95883 6.69038 8.15691 7.08808C8.34562 6.50487 8.78728 5.74483 9.06298 5.28573C9.56687 4.44628 9.95701 3.78967 9.95701 2.66996ZM15.1214 12.3435C15.4347 12.031 15.4347 11.5245 15.1214 11.2121C14.8081 10.8997 14.3001 10.8997 13.9868 11.2121L8.52692 16.6565C8.21362 16.969 8.21362 17.4755 8.52692 17.7879C8.84023 18.1003 9.3482 18.1003 9.6615 17.7879L15.1214 12.3435ZM15.3341 16.8333C15.3341 17.4777 14.8103 18 14.1641 18C13.5179 18 12.9941 17.4777 12.9941 16.8333C12.9941 16.189 13.5179 15.6667 14.1641 15.6667C14.8103 15.6667 15.3341 16.189 15.3341 16.8333ZM9.4842 13.3333C10.1304 13.3333 10.6542 12.811 10.6542 12.1667C10.6542 11.5223 10.1304 11 9.4842 11C8.83804 11 8.31423 11.5223 8.31423 12.1667C8.31423 12.811 8.83804 13.3333 9.4842 13.3333Z"
+                        fill="white" fill-opacity="0.64" />
+                    </svg>
+                  </div>
+                  <h3 class="services-block__caption">Offers</h3>
+                </div>
+                <div class="services-block__text">
+                  Get access to hundreds of offers carefully hand-picked to guarantee high EPC!
+                </div>
+              </div>
+              <div class="services-block__item">
+                <div class="services-block__header">
+                  <div class="services-block__ico">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M9.79999 7.19998V7.74999C9.79999 8.44034 10.3596 8.99998 11.05 8.99998C11.7403 8.99998 12.3 8.44034 12.3 7.74999V7.19998C12.3 4.30001 10 2 7.19998 2C4.30001 2 2 4.30001 2 7.19998V9.75C2 10.4404 2.55964 11 3.24999 11C3.94034 11 4.49998 10.4404 4.49998 9.75V7.19998C4.49998 5.79997 5.69998 4.59997 7.1 4.59997C8.59999 4.49998 9.79999 5.69998 9.79999 7.19998Z"
+                        fill="white" fill-opacity="0.64" />
+                      <path
+                        d="M20.5999 10.7998H9.39995C8.59994 10.7998 7.99994 11.3998 7.99994 12.1998V20.5998C7.99994 21.3998 8.59994 21.9998 9.39995 21.9998H20.5999C21.3999 21.9998 21.9999 21.3998 21.9999 20.5998V12.1998C21.9999 11.4998 21.2999 10.7998 20.5999 10.7998ZM16.1999 18.8998H13.8999L14.3999 16.4998C13.9999 16.2998 13.6999 15.7998 13.6999 15.2998C13.6999 14.4998 14.2999 13.8998 15.0999 13.8998C15.9 13.8998 16.5 14.4998 16.5 15.2998C16.5 15.7998 16.2 16.1998 15.8 16.4998L16.1999 18.8998Z"
+                        fill="white" fill-opacity="0.64" />
+                    </svg>
+                  </div>
+                  <h3 class="services-block__caption">
+                    Access to Ad Accounts
+                  </h3>
+                </div>
+                <div class="services-block__text">
+                  Need help finding long lasting Agency Ad Accounts?
+                  No worries, we got you covered.
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn-main services__btn triggerModalForm">
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </section>
+      <style>
+        #togglePastEvents{
+          height: 50px;
+          width: 200px;
+          background-color: #ffffff00;
+          color: #000000;
+          border: 1.4px solid #c7c7c7;
+          padding: 10px 20px;
+          cursor: pointer;  
+          border-radius: 25px; 
+          font-size: clamp(1.4rem, 1.3255813953rem + 0.2325581395vw, 1.6rem);
+          margin: 20px auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
+      </style>
+      <section>
+        <div class="container" style="text-align: center;">
+          <button id="togglePastEvents">Show Past Events <i class="fa-solid fa-chevron-down"></i></button>
+        </div>
+      </section>
+      <style>
+          .events.past-events-sect {
+            display: none;
+          }
+
+          .show {
+            display: block !important;
+          }
+        </style>
+      <section id="past-events" class="events past-events-sect" style="transition: opacity 2.5s ease, transform 2.5s ease; transform-origin: top;">
+        <div class="container">
+          <div class="events__wrapper">
+            <div class="events__header">
+              <h2 class="title events__title">Past Events</h2>
+              <div class="events-arrows past-events-arrows">
+                <button type="button" class="events-arrows__item past-events-arrows__left" data-carousel="past-events">
+                  <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.5 8H1.5M1.5 8L8.5 1M1.5 8L8.5 15" stroke="#B3B3B3" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <button type="button" class="events-arrows__item past-events-arrows__right" data-carousel="past-events">
+                  <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 8L20.5 8M20.5 8L13.5 15M20.5 8L13.5 1" stroke="#B3B3B3" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="swiper events-swiper past-events-swiper">
+              <div class="swiper-wrapper">
+                <!-- Display past events here -->
+                <div class="swiper-slide events-swiper__slide">
+                  <div class="events-swiper__img">
+                    <img src="img/AFFILIATE-WORLD-DUBAI.png" width="380"
+                      height="420" alt="Uniclicks" loading="lazy" aria-hidden="true" />
+                  </div>
+                  <div class="events-swiper__city">
+                    <h1>Title</h1>
+                  </div>
+                  <div class="events-swiper__caption">
+                    <p>Location</p>
+                  </div>
+                  <div class='events-swiper__date'>
+                    <p>20 May</p>
+                  </div>
+                </div>
+                <!-- Display past events here -->
+                <div class="swiper-slide events-swiper__slide">
+                  <div class="events-swiper__img">
+                    <img src="img/AFFILIATE-WORLD-DUBAI.png" width="380"
+                      height="420" alt="Uniclicks" loading="lazy" aria-hidden="true" />
+                  </div>
+                  <div class="events-swiper__city">
+                    <h1>Title</h1>
+                  </div>
+                  <div class="events-swiper__caption">
+                    <p>Location</p>
+                  </div>
+                  <div class='events-swiper__date'>
+                    <p>20 May</p>
+                  </div>
+                </div>
+                <!-- Display past events here -->
+                <div class="swiper-slide events-swiper__slide">
+                  <div class="events-swiper__img">
+                    <img src="img/AFFILIATE-WORLD-DUBAI.png" width="380"
+                      height="420" alt="Uniclicks" loading="lazy" aria-hidden="true" />
+                  </div>
+                  <div class="events-swiper__city">
+                    <h1>Title</h1>
+                  </div>
+                  <div class="events-swiper__caption">
+                    <p>Location</p>
+                  </div>
+                  <div class='events-swiper__date'>
+                    <p>20 May</p>
+                  </div>
+                </div>
+                <!-- Display past events here -->
+                <div class="swiper-slide events-swiper__slide">
+                  <div class="events-swiper__img">
+                    <img src="img/AFFILIATE-WORLD-DUBAI.png" width="380"
+                      height="420" alt="Uniclicks" loading="lazy" aria-hidden="true" />
+                  </div>
+                  <div class="events-swiper__city">
+                    <h1>Title</h1>
+                  </div>
+                  <div class="events-swiper__caption">
+                    <p>Location</p>
+                  </div>
+                  <div class='events-swiper__date'>
+                    <p>20 May</p>
+                  </div>
+                </div>
+                <!-- Display past events here -->
+                <div class="swiper-slide events-swiper__slide">
+                  <div class="events-swiper__img">
+                    <img src="img/AFFILIATE-WORLD-DUBAI.png" width="380"
+                      height="420" alt="Uniclicks" loading="lazy" aria-hidden="true" />
+                  </div>
+                  <div class="events-swiper__city">
+                    <h1>Title</h1>
+                  </div>
+                  <div class="events-swiper__caption">
+                    <p>Location</p>
+                  </div>
+                  <div class='events-swiper__date'>
+                    <p>20 May</p>
+                  </div>
+                </div>
+                <!-- Display past events here -->
+                <div class="swiper-slide events-swiper__slide">
+                  <div class="events-swiper__img">
+                    <img src="img/AFFILIATE-WORLD-DUBAI.png" width="380"
+                      height="420" alt="Uniclicks" loading="lazy" aria-hidden="true" />
+                  </div>
+                  <div class="events-swiper__city">
+                    <h1>Title</h1>
+                  </div>
+                  <div class="events-swiper__caption">
+                    <p>Location</p>
+                  </div>
+                  <div class='events-swiper__date'>
+                    <p>20 May</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="events" class="events">
+        <div class="container">
+          <div class="events__wrapper">
+            <div class="events__header">
+              <h2 class="title events__title">Upcoming Events</h2>
+              <div class="events-arrows upcoming-events-arrows">
+                <button type="button" class="events-arrows__item upcoming-events-arrows__left"
+                  data-carousel="upcoming-events">
+                  <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.5 8H1.5M1.5 8L8.5 1M1.5 8L8.5 15" stroke="#B3B3B3" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <button type="button" class="events-arrows__item upcoming-events-arrows__right"
+                  data-carousel="upcoming-events">
+                  <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 8L20.5 8M20.5 8L13.5 15M20.5 8L13.5 1" stroke="#B3B3B3" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="swiper events-swiper upcoming-events-swiper">
+              <div class="swiper-wrapper">
+                <!-- Display past events here -->
+                <div class="swiper-slide events-swiper__slide">
+                  <div class="events-swiper__img">
+                    <img src="img/AFFILIATE-WORLD-DUBAI.png" width="380"
+                      height="420" alt="Uniclicks" loading="lazy" aria-hidden="true" />
+                  </div>
+                  <div class="events-swiper__city">
+                    <h1>Title</h1>
+                  </div>
+                  <div class="events-swiper__caption">
+                    <p>Location</p>
+                  </div>
+                  <div class='events-swiper__date'>
+                    <p>20 May</p>
+                  </div>
+                </div>
+                <!-- Display past events here -->
+                <div class="swiper-slide events-swiper__slide">
+                  <div class="events-swiper__img">
+                    <img src="img/AFFILIATE-WORLD-DUBAI.png" width="380"
+                      height="420" alt="Uniclicks" loading="lazy" aria-hidden="true" />
+                  </div>
+                  <div class="events-swiper__city">
+                    <h1>Title</h1>
+                  </div>
+                  <div class="events-swiper__caption">
+                    <p>Location</p>
+                  </div>
+                  <div class='events-swiper__date'>
+                    <p>20 May</p>
+                  </div>
+                </div>
+                <!-- Display past events here -->
+                <div class="swiper-slide events-swiper__slide">
+                  <div class="events-swiper__img">
+                    <img src="img/AFFILIATE-WORLD-DUBAI.png" width="380"
+                      height="420" alt="Uniclicks" loading="lazy" aria-hidden="true" />
+                  </div>
+                  <div class="events-swiper__city">
+                    <h1>Title</h1>
+                  </div>
+                  <div class="events-swiper__caption">
+                    <p>Location</p>
+                  </div>
+                  <div class='events-swiper__date'>
+                    <p>20 May</p>
+                  </div>
+                </div>
+                <!-- Display past events here -->
+                <div class="swiper-slide events-swiper__slide">
+                  <div class="events-swiper__img">
+                    <img src="img/AFFILIATE-WORLD-DUBAI.png" width="380"
+                      height="420" alt="Uniclicks" loading="lazy" aria-hidden="true" />
+                  </div>
+                  <div class="events-swiper__city">
+                    <h1>Title</h1>
+                  </div>
+                  <div class="events-swiper__caption">
+                    <p>Location</p>
+                  </div>
+                  <div class='events-swiper__date'>
+                    <p>20 May</p>
+                  </div>
+                </div>
+                <!-- Display past events here -->
+                <div class="swiper-slide events-swiper__slide">
+                  <div class="events-swiper__img">
+                    <img src="img/AFFILIATE-WORLD-DUBAI.png" width="380"
+                      height="420" alt="Uniclicks" loading="lazy" aria-hidden="true" />
+                  </div>
+                  <div class="events-swiper__city">
+                    <h1>Title</h1>
+                  </div>
+                  <div class="events-swiper__caption">
+                    <p>Location</p>
+                  </div>
+                  <div class='events-swiper__date'>
+                    <p>20 May</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <div class="footer__absolute">
+          <div class="container">
+            <div class="footer-block">
+              <h2 class="footer-block__title">
+                Interested in becoming a partner or you have any questions for
+                us?
+              </h2>
+              <div class="footer-block__caption">
+                Our team is ready to meet you.
+              </div>
+              <button class="btn-main footer-block__btn triggerModalForm">
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="footer__info">
+            <a href="index.html" class="footer__logo"><svg width="197" height="40" viewBox="0 0 197 40" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_108_4276)">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M99.4319 0.22998H105.214V39.2091H99.4319V0.22998ZM153.138 0.22998H158.92V20.6095L167.582 11.8167H175.27L163.428 23.6813L177.161 39.2091H169.572L159.393 27.5983L158.92 28.0722V39.2091H153.138V0.22998ZM35.0596 13.8134C36.8818 12.0645 39.1771 11.187 41.9104 11.187C45.432 11.187 48.1371 12.4568 49.9084 15.0504C51.0228 16.6791 51.5266 19.1663 51.5266 22.3958V39.2091H45.7443V22.5218C45.7443 20.4401 45.3539 19.0085 44.6791 18.1181C43.8577 17.0452 42.6361 16.4765 40.9048 16.4765C39.1419 16.4765 37.7962 17.0815 36.797 18.268L36.7939 18.2718C35.6815 19.572 35.0596 21.7394 35.0596 24.9147V39.2091H29.2774V11.8167H35.0596V13.8134ZM74.3848 15.3367C77.152 12.5653 80.6469 11.187 84.8206 11.187C87.9621 11.187 90.7921 12.0638 93.2896 13.8201L93.5573 14.0082V21.5634L92.4355 20.1415C90.5048 17.6942 87.9654 16.4765 84.7577 16.4765C82.3636 16.4765 80.3432 17.2957 78.6606 18.9421L78.6553 18.9474C77.0034 20.5252 76.1473 22.7177 76.1473 25.6074C76.1473 28.497 77.0034 30.6896 78.6553 32.2674C80.3387 33.8757 82.3407 34.6752 84.6949 34.6752C87.8489 34.6752 90.4825 33.4034 92.6338 30.8094L93.7458 29.4684V36.9476L93.4873 37.1362C90.9079 39.0199 88.0125 39.9648 84.8206 39.9648C80.6122 39.9648 77.0976 38.6333 74.3272 35.9463L74.3239 35.9427L74.32 35.9391C71.5954 33.2091 70.2393 29.7703 70.2393 25.6704C70.2393 21.5282 71.617 18.0671 74.3848 15.3367ZM128.091 15.3367C130.858 12.5653 134.353 11.187 138.526 11.187C141.668 11.187 144.497 12.0638 146.995 13.8201L147.263 14.0082V21.5634L146.141 20.1415C144.21 17.6942 141.671 16.4765 138.463 16.4765C136.069 16.4765 134.049 17.2957 132.366 18.9421L132.361 18.9474C130.709 20.5251 129.853 22.7177 129.853 25.6074C129.853 28.497 130.709 30.6896 132.361 32.2674C134.044 33.8757 136.046 34.6752 138.401 34.6752C141.554 34.6752 144.188 33.4034 146.34 30.8094L147.452 29.4684V36.9476L147.193 37.1362C144.614 39.0199 141.718 39.9648 138.526 39.9648C134.318 39.9648 130.803 38.6333 128.033 35.9463L128.03 35.9427L128.026 35.9391C125.301 33.2091 123.945 29.7703 123.945 25.6704C123.945 21.5282 125.323 18.0671 128.091 15.3367ZM181.618 13.3034C183.178 11.8783 185.182 11.187 187.572 11.187C189.33 11.187 190.879 11.6064 192.191 12.4713C193.502 13.335 194.535 14.6158 195.307 16.2732L195.56 16.8176L190.707 19.3725L190.447 18.7279C190.123 17.927 189.704 17.3733 189.215 17.0181C188.73 16.6661 188.13 16.4765 187.384 16.4765C186.637 16.4765 186.027 16.6859 185.522 17.0874C185.113 17.4428 184.87 17.9808 184.87 18.8065C184.87 19.5373 185.086 20.0099 185.446 20.3247C185.977 20.6989 187.042 21.237 188.697 21.9417C192.014 23.3303 194.322 24.7223 195.477 26.1552L195.478 26.1567L194.989 26.552L195.476 26.1542L195.477 26.1552C196.503 27.4173 197 28.9701 197 30.771C197 33.5663 196.085 35.8455 194.216 37.5356L194.215 37.5362C192.406 39.1673 190.111 39.9648 187.384 39.9648C186.835 39.9648 186.253 39.897 185.639 39.7665C185.646 39.7675 185.654 39.7686 185.661 39.7696L185.749 39.1462L185.618 39.7619C185.625 39.7634 185.632 39.7649 185.639 39.7665C185.002 39.673 184.152 39.4516 183.107 39.1162L183.092 39.1115L183.078 39.1061C181.958 38.6853 180.915 37.9253 179.944 36.864C178.953 35.7812 178.201 34.4408 177.674 32.8593L177.49 32.3053L182.53 30.1875L182.757 30.8056C183.254 32.1615 183.902 33.1232 184.668 33.745C185.425 34.3594 186.34 34.6752 187.446 34.6752C188.697 34.6752 189.547 34.3016 190.11 33.6377L190.116 33.6309L190.122 33.6243C190.776 32.8958 191.092 32.0789 191.092 31.1489C191.092 30.6348 191 30.2323 190.844 29.9192L190.828 29.8868L190.816 29.8527C190.697 29.527 190.47 29.2247 190.094 28.9504L190.082 28.9419L190.071 28.9328C189.681 28.6207 189.299 28.3731 188.926 28.1857L188.913 28.1796L188.901 28.1729C188.549 27.9771 188.005 27.7135 187.256 27.3802L187.257 27.3807L187.509 26.8038L187.254 27.3793L187.256 27.3802C185.566 26.6394 184.173 25.9398 183.084 25.2805C182.003 24.6268 181.181 23.9887 180.673 23.3583L180.669 23.3535C179.767 22.2129 179.339 20.7859 179.339 19.1213C179.339 16.7168 180.078 14.753 181.611 13.3099L181.614 13.3066L181.618 13.3034ZM118.288 14.5247V39.2091H112.506V17.7433L118.288 14.5247ZM0.00012207 11.8167H5.78241V27.6855C5.78241 30.2988 6.20348 31.9853 6.90759 32.904C7.8136 34.0647 9.14272 34.6752 10.999 34.6752C12.8554 34.6752 14.1845 34.0647 15.0905 32.904C15.7946 31.9853 16.2157 30.2988 16.2157 27.6855V11.8167H21.9979V28.1892C21.9979 31.7964 21.1852 34.6043 19.4421 36.4887L19.4385 36.4925C17.2551 38.8141 14.4228 39.9648 10.999 39.9648C7.57523 39.9648 4.74301 38.8141 2.55954 36.4925L2.556 36.4887C0.812846 34.6043 0.00012207 31.7964 0.00012207 28.1892V11.8167ZM58.8001 11.8167H64.5824V39.2091H58.8001V11.8167Z"
+                    fill="white" />
+                  <path
+                    d="M118.161 0.166992L118.164 4.16669L123.817 0.796707L126.645 6.14926L112.511 13.9775L112.504 0.168809L118.161 0.166992Z"
+                    fill="url(#paint0_linear_108_4276)" />
+                </g>
+                <defs>
+                  <linearGradient id="paint0_linear_108_4276" x1="120.927" y1="-5.50041" x2="120.927" y2="13.9775"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#2FAD81" />
+                    <stop offset="1" stop-color="#209265" />
+                  </linearGradient>
+                  <clipPath id="clip0_108_4276">
+                    <rect width="197" height="40" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg></a>
+            <div class="footer__rights">
+              ©uniclicks 2023. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="modal modal-form">
+      <div class="modal__wrapper">
+        <div class="modal__content">
+          <button class="modal__close modal-form__close" aria-label="Close modal window"></button>
+          <form method="post" id="contactForm" class="form-win">
+            <div class="form__wrapper">
+              <div class="form-block">
+                <h1 class="form-block__title">Send Request</h1>
+                <div class="message" id="formMessage"></div>
+                <div class="form-block__wrap">
+                  <input type="text" name="name" id="cname" class="form-block__input" placeholder="Name:" />
+                  <input type="text" name="company" id="company" class="form-block__input" placeholder="Company:" />
+                  <div class="form-block__wrapper">
+                    <div class="form-block__text">Сommunication in:</div>
+                    <input class="custom-radio" name="communication_type" type="radio" id="radio-skype" value="Skype" />
+                    <label for="radio-skype">Skype</label>
+                    <input class="custom-radio" name="communication_type" type="radio" id="radio-telegram" value="Telegram" />
+                    <label for="radio-telegram">Telegram</label>
+                    <input class="custom-radio" name="communication_type" type="radio" id="radio-email" value="Email" />
+                    <label for="radio-email">Email</label>
+                  </div>
+                  <input type="text" name="communication_id" id="communication_id" class="form-block__input" placeholder="Your Skype ID, Telegram, Email" />
+                  <input type="text" name="message" id="message-input" class="form-block__input" placeholder="Your message:" />
+                </div>
+                <button type="submit" class="form-block__btn">
+                  Submit Request
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/carousel.js"></script>
+  <script src="js/board.js"></script>
+
+ 
+</body>
+</html>
