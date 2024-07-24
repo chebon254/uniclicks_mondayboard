@@ -94,7 +94,16 @@ async function processEvents(events) {
     events.forEach(event => {
         const title = event.name;
         const location = event.column_values.find(col => col.id === 'location__1')?.text || '';
-        const image = JSON.parse(event.column_values.find(col => col.id === 'files__1')?.value || '[]')[0]?.public_url || '';
+        let image = '';
+        try {
+            const fileValue = event.column_values.find(col => col.id === 'files__1')?.value;
+            if (fileValue) {
+                const parsedValue = JSON.parse(fileValue);
+                image = parsedValue[0]?.url || '';
+            }
+        } catch (error) {
+            console.error('Error parsing image URL:', error);
+        }
         const startDate = new Date(event.column_values.find(col => col.id === 'date__1')?.text || '');
         const endDate = new Date(event.column_values.find(col => col.id === 'date2__1')?.text || '');
 
@@ -129,22 +138,27 @@ async function submitContactForm(event) {
     const communicationId = document.getElementById('communication_id').value;
     const message = document.getElementById('message-input').value;
 
+    // Escape special characters
+    const escapeString = (str) => str.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n');
+
+    const columnValues = JSON.stringify({
+        "text__1": escapeString(company),
+        "text2__1": escapeString(communicationType),
+        "text24__1": escapeString(communicationId),
+        "text_1__1": escapeString(message)
+    });
+
     const mutation = `
-                mutation {
-                    create_item (
-                        board_id: ${BOARD_IDS.CONTACT},
-                        item_name: "${name}",
-                        column_values: "{
-                            \\"text__1\\": \\"${company}\\",
-                            \\"text2__1\\": \\"${communicationType}\\",
-                            \\"text24__1\\": \\"${communicationId}\\",
-                            \\"text_1__1\\": \\"${message}\\"
-                        }"
-                    ) {
-                        id
-                    }
-                }
-            `;
+        mutation {
+            create_item (
+                board_id: ${BOARD_IDS.CONTACT},
+                item_name: "${escapeString(name)}",
+                column_values: ${JSON.stringify(columnValues)}
+            ) {
+                id
+            }
+        }
+    `;
 
     try {
         const response = await axios.post(MONDAY_API_URL, { query: mutation }, {
@@ -159,6 +173,7 @@ async function submitContactForm(event) {
         document.getElementById('contactForm').reset();
     } catch (error) {
         console.error('Error submitting contact form:', error);
+        console.error('Error details:', error.response?.data);
         document.getElementById('formMessage').textContent = 'An error occurred. Please try again.';
     }
 }
