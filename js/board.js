@@ -188,12 +188,12 @@ async function submitContactForm(event) {
         });
 
         console.log('Contact form submitted:', response.data);
-        document.getElementById('formMessage').textContent = 'Thank you for your submission!';
+        document.getElementById('formMessage').textContent = 'Success. Thank you for your submission!';
         document.getElementById('contactForm').reset();
     } catch (error) {
         console.error('Error submitting contact form:', error);
         console.error('Error details:', error.response?.data);
-        document.getElementById('formMessage').textContent = 'An error occurred. Please try again.';
+        document.getElementById('formErMessage').textContent = 'An error occurred. Please try again.';
     }
 }
 
