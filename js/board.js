@@ -94,16 +94,12 @@ async function processEvents(events) {
     events.forEach(event => {
         const title = event.name;
         const location = event.column_values.find(col => col.id === 'location__1')?.text || '';
-        let image = '';
-        try {
-            const fileValue = event.column_values.find(col => col.id === 'files__1')?.value;
-            if (fileValue) {
-                const parsedValue = JSON.parse(fileValue);
-                image = parsedValue[0]?.url || '';
-            }
-        } catch (error) {
-            console.error('Error parsing image URL:', error);
-        }
+        
+        // Use the text field directly for the image URL
+        const image = event.column_values.find(col => col.id === 'files__1')?.text || '';
+        
+        console.log('Image URL:', image); // Log the image URL
+
         const startDate = new Date(event.column_values.find(col => col.id === 'date__1')?.text || '');
         const endDate = new Date(event.column_values.find(col => col.id === 'date2__1')?.text || '');
 
@@ -117,6 +113,29 @@ async function processEvents(events) {
     });
 
     return { upcomingEvents, pastEvents };
+}
+
+function createEventHTML(event) {
+    const imageHtml = event.image 
+        ? `<img src="${event.image}" alt="${event.title}" onerror="this.onerror=null; this.src='path/to/fallback-image.jpg'; this.alt='Image not available'">`
+        : `<div class="placeholder-image">No Image Available</div>`;
+
+    return `
+        <div class="swiper-slide events-swiper__slide">
+            <div class="events-swiper__img">
+                ${imageHtml}
+            </div>
+            <div class="events-swiper__city">
+                <h2>${event.title}</h2>
+            </div>
+            <div class="events-swiper__caption">
+                <p>${event.location}</p>
+            </div>
+            <div class='events-swiper__date'>
+                <p>${event.startDate.toDateString()} - ${event.endDate.toDateString()}</p>
+            </div>
+        </div>
+    `;
 }
 
 async function processOffers(offers) {
