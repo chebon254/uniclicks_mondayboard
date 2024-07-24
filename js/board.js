@@ -197,3 +197,6 @@ document.addEventListener('DOMContentLoaded', main);
 
 // Add event listener to the form
 document.getElementById('contactForm').addEventListener('submit', submitContactForm);
+
+
+
